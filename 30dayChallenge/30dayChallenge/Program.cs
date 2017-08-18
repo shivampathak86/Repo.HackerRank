@@ -51,31 +51,45 @@ namespace _30dayChallenge
     
       public static void Day11()
         {
-           
-                int[][] arr = new int[6][];
-                for (int arr_i = 0; arr_i < 6; arr_i++)
-                {
-                    string[] arr_temp = Console.ReadLine().Split(' ');
-                    arr[arr_i] = Array.ConvertAll(arr_temp, Int32.Parse);
-                }
+
+            int[][] arr = new int[6][];
+
+
+            arr[0] = new int[] { 1,1,1,0,0,0 };
+            arr[1] = new int[] { 0,1,0,0,0,0 };
+            arr[2] = new int[] { 1,1,1,0,0,0 };
+            arr[3] = new int[] { 0,0,2,4,4,0 };
+            arr[4] = new int[] { 0,0,0,2,0,0 };
+            arr[5] = new int[] { 0,0,1,2,4,0 };
+
+
+    
+                //for (int arr_i = 0; arr_i < 6; arr_i++)
+                //{
+                //    string[] arr_temp = Console.ReadLine().Split(' ');
+                //    arr[arr_i] = Array.ConvertAll(arr_temp, Int32.Parse);
+                //}
 
             int h = 0;
-           // int[] Result = new int[16];
+            // int[] Result = new int[16
             int[] Sum = new int[16];
 
-            for(int i=0; i<6;i++)
+            for(int i=0; i<4;i++)
             {
-                for ( int j=0; j<6;j++)
+                for ( int j=0; j<4;j++)
                 {
 
-                    Sum[h] = arr[i][j] + arr[i][j + 1] + arr[i][j + 2] + arr[i + 1][j + 1] + arr[i + 2][j] + arr[i + 2][j + 1] + arr[i + 2][j + ];
+                    Sum[h] = arr[i][j] + arr[i][j + 1] + arr[i][j + 2] + arr[i + 1][j + 1] + arr[i + 2][j] + arr[i + 2][j + 1] + arr[i + 2][j + 2];
+                    Console.WriteLine(Sum[h]);
+                    h++;
                 }
-                h++;
+                
             }
+            
 
-            int result = Sum.Max();
+            int Result= Sum.Max();
 
-            Console.WriteLine(result);
+            Console.WriteLine(Result);
 
             Console.Read();
         }
