@@ -12,7 +12,8 @@ namespace _30dayChallenge
     {
        public  static void Main(string[] args)
         {
-            Day10();
+           // Day10();
+            Day11();
         }
 
 
@@ -48,7 +49,37 @@ namespace _30dayChallenge
           Console.Read();
         } 
     
-     
-    
+      public static void Day11()
+        {
+           
+                int[][] arr = new int[6][];
+                for (int arr_i = 0; arr_i < 6; arr_i++)
+                {
+                    string[] arr_temp = Console.ReadLine().Split(' ');
+                    arr[arr_i] = Array.ConvertAll(arr_temp, Int32.Parse);
+                }
+
+            int h = 0;
+           // int[] Result = new int[16];
+            int[] Sum = new int[16];
+
+            for(int i=0; i<6;i++)
+            {
+                for ( int j=0; j<6;j++)
+                {
+
+                    Sum[h] = arr[i][j] + arr[i][j + 1] + arr[i][j + 2] + arr[i + 1][j + 1] + arr[i + 2][j] + arr[i + 2][j + 1] + arr[i + 2][j + ];
+                }
+                h++;
+            }
+
+            int result = Sum.Max();
+
+            Console.WriteLine(result);
+
+            Console.Read();
+        }
+
+      
     }
 }
