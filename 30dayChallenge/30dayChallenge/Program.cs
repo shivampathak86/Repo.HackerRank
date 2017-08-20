@@ -15,7 +15,9 @@ namespace _30dayChallenge
         {
             // Day10();
             //Day11();
-            Student.Day12();
+            //Student.Day12();
+            MyBook.Day13();
+            
 
       
         }
@@ -209,13 +211,70 @@ namespace _30dayChallenge
 
 }
 
+//*********************************************Day 13 challenge begins*******************************************************
+
+abstract class Book
+    {
+
+        protected string title;
+        protected string author;
+        //protected string price;
+
+        
+        public Book(String t, String a)
+        {
+            title = t;
+            author = a;
+        }
+
+        public Book()
+        {
+
+
+        }
+
+        public abstract void display();
+
+
+    }
+
+
+    class MyBook : Book
+    {
+        protected int price;
+
+        public MyBook(string Title, string Author, int Price) : base(Title, Author)
+        {
+            this.price = Price;
+        }
+       /* public MyBook(string Title, string Author, int Price)
+        {
+
+            base.title = Title;
+            base.author = Author;
+            this.price = Price;
+
+        }
+        */
+        public override void display()
+        {
+            Console.WriteLine("Title: {0}",title);
+            Console.WriteLine("Author: {0}",author);
+            Console.WriteLine("Price: {0}",price);
+            Console.Read();
+        }
 
 
 
 
 
+        public static void Day13()
+        {
+            Book bk = new MyBook("Test", "Test", 10);
 
-
+            bk.display();
+        }
+    }
 
 
 
